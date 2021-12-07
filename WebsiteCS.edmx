@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="credenciall_websiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Call">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="header" Type="varchar" MaxLength="150" />
+          <Property Name="btn_text" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="feature_header" Type="varchar" MaxLength="150" />
+          <Property Name="feature_text" Type="varchar" MaxLength="150" />
+          <Property Name="active" Type="int" />
+        </EntityType>
+        <EntityType Name="Highlight">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hl_header" Type="varchar" MaxLength="150" />
+          <Property Name="hl_subtitle" Type="varchar" MaxLength="150" />
+          <Property Name="active" Type="tinyint" />
+          <Property Name="hl_slogan" Type="varchar" MaxLength="150" />
+          <Property Name="hl_post_header" Type="varchar" MaxLength="150" />
+          <Property Name="hl_post_text" Type="varchar" MaxLength="250" />
+          <Property Name="hl_cta" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="header" Type="varchar" MaxLength="150" />
+          <Property Name="text" Type="varchar" MaxLength="150" />
+          <Property Name="active" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Slogan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="text" Type="varchar" MaxLength="150" />
+          <Property Name="active" Type="int" />
+        </EntityType>
+        <EntityContainer Name="credenciall_websiteModelStoreContainer">
+          <EntitySet Name="Call" EntityType="Self.Call" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feature" EntityType="Self.Feature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Highlight" EntityType="Self.Highlight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slogan" EntityType="Self.Slogan" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="credenciall_websiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Call">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="header" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="btn_text" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feature_header" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="feature_text" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Highlight">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hl_header" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="hl_subtitle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Byte" />
+          <Property Name="hl_slogan" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="hl_post_header" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="hl_post_text" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="hl_cta" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="header" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Slogan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="credenciall_websiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Calls" EntityType="Self.Call" />
+          <EntitySet Name="Features" EntityType="Self.Feature" />
+          <EntitySet Name="Highlights" EntityType="Self.Highlight" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="Slogans" EntityType="Self.Slogan" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="credenciall_websiteModelStoreContainer" CdmEntityContainer="credenciall_websiteEntities">
+          <EntitySetMapping Name="Calls">
+            <EntityTypeMapping TypeName="credenciall_websiteModel.Call">
+              <MappingFragment StoreEntitySet="Call">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="header" ColumnName="header" />
+                <ScalarProperty Name="btn_text" ColumnName="btn_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Features">
+            <EntityTypeMapping TypeName="credenciall_websiteModel.Feature">
+              <MappingFragment StoreEntitySet="Feature">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="feature_header" ColumnName="feature_header" />
+                <ScalarProperty Name="feature_text" ColumnName="feature_text" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Highlights">
+            <EntityTypeMapping TypeName="credenciall_websiteModel.Highlight">
+              <MappingFragment StoreEntitySet="Highlight">
+                <ScalarProperty Name="hl_cta" ColumnName="hl_cta" />
+                <ScalarProperty Name="hl_post_text" ColumnName="hl_post_text" />
+                <ScalarProperty Name="hl_post_header" ColumnName="hl_post_header" />
+                <ScalarProperty Name="hl_slogan" ColumnName="hl_slogan" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="hl_header" ColumnName="hl_header" />
+                <ScalarProperty Name="hl_subtitle" ColumnName="hl_subtitle" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="credenciall_websiteModel.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="header" ColumnName="header" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slogans">
+            <EntityTypeMapping TypeName="credenciall_websiteModel.Slogan">
+              <MappingFragment StoreEntitySet="Slogan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,66 @@
+﻿@model Website_Credenciall.Highlight
+
+@{
+    ViewBag.Title = "AdminDetailHighlight";
+}
+
+<h2>AdminDetailHighlight</h2>
+
+<div>
+    <h4>Highlight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hl_header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hl_header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hl_subtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hl_subtitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hl_post_header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hl_post_header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hl_post_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hl_post_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hl_cta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hl_cta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.active)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "AdminEditHighlight", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "AdminIndexHighlight")
+</p>

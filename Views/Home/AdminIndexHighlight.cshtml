@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Website_Credenciall.Highlight>
+
+@{
+    ViewBag.Title = "AdminIndexHighlight";
+}
+
+<h2>AdminIndexHighlight</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AdminCreateHighlight")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.hl_header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hl_subtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hl_slogan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hl_post_header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hl_post_text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hl_cta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.active)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.hl_header)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hl_subtitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hl_slogan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hl_post_header)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hl_post_text)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hl_cta)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.active)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "AdminEditHighlight", new { id = item.id }) |
+        @Html.ActionLink("Details", "AdminDetailHighlight", new { id = item.id }) |
+        @Html.ActionLink("Delete", "AdminDeleteHighlight", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>

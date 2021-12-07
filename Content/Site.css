@@ -1,0 +1,15 @@
+﻿.body-render {
+    padding-top: 70px;
+}
+
+.bg-gradient-primary-to-secondary {
+    background: linear-gradient( 45deg, #3e6a99, #004033) !important;
+}
+
+.text-gradient {
+    background: -webkit-linear-gradient(#3e6a99, #004033);
+}
+
+.btn-primary {
+    background-color: #3e6a99;
+}
