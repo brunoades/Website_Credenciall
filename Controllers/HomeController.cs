@@ -9,9 +9,10 @@ namespace Website_Credenciall.Controllers
     public class HomeController : Controller
     {
         credenciall_websiteEntities _context = new credenciall_websiteEntities();
+        ConfigDB db = new ConfigDB();
         public ActionResult Index()
         {
-            
+            db.Connect("ecspassdb");
             var homeHeaderData = _context.Highlights
                 .First();
             ViewData["HeaderTitle"] = homeHeaderData.hl_header;
@@ -20,6 +21,27 @@ namespace Website_Credenciall.Controllers
             ViewData["PostHeader"] = homeHeaderData.hl_post_header;
             ViewData["PostText"] = homeHeaderData.hl_post_text;
             ViewData["CTA"] = homeHeaderData.hl_cta;
+            //db.ExecuteSelected("SELECT * from `clients` WHERE code='" + "9999" + "'" + ";");
+            //if (db.Count() == 1)
+            //{
+            //    ViewData["Client"] = db.Results(0, "name");
+            //}
+            //else
+            //{
+            //    ViewData["Client"] = "";
+            //}
+            List<string> userList = new List<string>();
+            db.ExecuteSelected("SELECT * FROM `users`;");
+            if (db.Count() > 0)
+            {
+                int users = db.Count();
+                for (int i = 0; i < users; i++)
+                {
+                    userList.Add(db.Results(i, "name"));
+                }
+            }
+            ViewBag.userList = userList;
+
             return View();
         }
         public ActionResult AdminIndexHighlight()

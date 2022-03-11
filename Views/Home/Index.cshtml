@@ -97,8 +97,14 @@
             <h2 class="text-white display-1 lh-1 mb-4">
                 @ViewData["CTA"]
                 <br />
-
             </h2>
+            <ul>
+
+                @foreach (var item in @ViewBag.userList)
+                {
+                    <li>@item</li>
+                }
+            </ul>
         </div>
     </div>
 </section>
